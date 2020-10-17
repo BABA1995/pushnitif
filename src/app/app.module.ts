@@ -10,6 +10,8 @@ import { MessagingService } from '../../service/messaging.service';
 import { environment } from '../environments/environment';
 import { AsyncPipe } from '../../node_modules/@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
    declarations: [AppComponent],
    imports: [
@@ -18,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       AngularFireDatabaseModule,
       AngularFireAuthModule,
       AngularFireMessagingModule,
+      HttpClientModule,
       AngularFireModule.initializeApp(environment.firebase),
       ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
    ],
